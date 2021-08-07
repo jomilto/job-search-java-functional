@@ -8,16 +8,22 @@ version '0.1.0'
 
 sourceCompatibility = 1.8
 
+application {
+    mainClassName = "com.jomilto.jobsearch.JobSearch"
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
-}
+    // https://mvnrepository.com/artifact/com.beust/jcommander
+    implementation group: 'com.beust', name: 'jcommander', version: '1.78'
 
-test {
-    useJUnit()
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    implementation group: 'io.github.openfeign', name: 'feign-core', version: '10.7.0'
 
-    maxHeapSize = '1G'
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-gson
+    implementation group: 'io.github.openfeign', name: 'feign-gson', version: '10.7.0'
+
 }
